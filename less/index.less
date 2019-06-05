@@ -51,6 +51,7 @@ table {
 /* Set every element's box-sizing to border-box */
 @testborder: 1px solid red;
 @text-size: 1.8rem;
+@complimentary-color: #fff7f0;
 
 .flexbox-end{
 	display: flex;
@@ -126,6 +127,7 @@ header{
 
 			@media (max-width: 500px){
 				margin: 0 auto;
+				width: 50%;
 			}
 			
 		}
@@ -136,7 +138,7 @@ header{
 
 			@media (max-width: 500px){
 				width: 90%;
-				height: 10%;
+				height: 5%;
 				margin: 0 auto;
 			}
 		}
@@ -156,13 +158,17 @@ header{
 
 		.button {
 		border: 1px solid black;
-		width: 15%;
-		height: 20px;
-		margin-left: 20px;
+		width: 20%;
+		height: 25px;
+		padding-top: .2%;
+		margin-left: 10%;
+		text-align: center;
+		font-size: 2rem;
+		border-radius: 5px;
+		background: @complimentary-color;
 
 		@media (max-width: 500px){
 			width: 30%;
-			text-align: center;
 			margin: 0 auto;
 			margin-top: 3%;
 		
@@ -222,9 +228,11 @@ header{
 		height: 55px;
 		padding-top: 2%;
 
+
 		@media (max-width: 500px){
 			height: 85px;
 		}
+
 		
 		li {
 			width: 25%;	
@@ -234,6 +242,9 @@ header{
 			}
 		}
 		
+	}
+	.part2, .part4 {
+		background: @complimentary-color;
 	}
 }
 footer {
