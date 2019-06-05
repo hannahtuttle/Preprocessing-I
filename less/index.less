@@ -49,14 +49,198 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+@testborder: 1px solid red;
+@text-size: 1.8rem;
+
+.flexbox-end{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.flexbox-spaceing {
+	display: flex;
+	justify-content: space-around;
+}
+.flexbox-distance {
+	display: flex;
+	justify-content: space-between;
+}
+
 * {
     box-sizing: border-box;
 }
-
+html{
+	font-size: 62.5%;
+}
 html, body {
     height: 100%;
 }
-
 body {
-	background: red;
+	max-width: 880px;
+	margin: 0 auto;
+}
+
+.navigation-container{
+	.flexbox-end();
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+	@media (max-width:500px){
+		justify-content: center;
+	}
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	width: 40%;
+
+	a {
+		color: black;
+		text-decoration: none;
+		font-size: @text-size;
+		
+		@media (max-width:500px){
+			margin-left: 3%;
+		}
+	}
+}
+header{
+	background-color: aliceblue;
+
+	.profile {
+		padding-top: 5%;
+		padding-bottom: 5%;
+		.flexbox-spaceing ();
+
+		@media (max-width: 500px){
+			flex-direction: column;
+			align-content: center;
+		}
+
+		h1 {
+			font-size: 5rem;
+			padding-top: 16%;
+			text-align: center;
+			width: 35%;
+
+			@media (max-width: 500px){
+				margin: 0 auto;
+			}
+			
+		}
+
+		img {
+			width: 30%;
+			height: 30%;
+
+			@media (max-width: 500px){
+				width: 90%;
+				height: 10%;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.bottom-profile {
+		margin: 0 auto;
+		border-top: 1px solid gray;
+		width: 90%;
+		padding-top: 5%;
+		padding-bottom: 5%;
+		font-size: @text-size;
+
+		p {
+			text-align: center;
+		}
+
+		.button {
+		border: 1px solid black;
+		width: 15%;
+		height: 20px;
+		margin-left: 20px;
+
+		@media (max-width: 500px){
+			width: 30%;
+			text-align: center;
+			margin: 0 auto;
+			margin-top: 3%;
+		
+		}
+		}
+	}
+}
+.middle-profile {
+	.flexbox-distance();
+	font-size: @text-size;
+	padding-top: 3%;
+	padding-bottom: 3%;
+
+	@media (max-width: 500px){
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	
+	}
+
+	.Intro {
+		width: 48%;
+		display: flex;
+		flex-direction: column;
+		align-content: space-around;
+
+		h2 {
+			font-size: 3.5rem;
+		}
+	}
+
+	.skills {
+		width: 48%;
+
+		h2 {
+			font-size: 3rem;
+		}
+
+		.skill-items {
+			border: 1px solid lightgray;
+			height: 40px;
+			padding-left: 5%;
+			padding-top: 2%;
+		}
+	}
+}
+.Work-History {
+	font-size: 3rem;
+	@media (max-width: 500px){
+		margin: 0 auto;
+	}
+
+	.WH-sections {
+		font-size: @text-size;
+		.flexbox-distance();
+		border: 1px solid lightgray;
+		height: 55px;
+		padding-top: 2%;
+
+		@media (max-width: 500px){
+			height: 85px;
+		}
+		
+		li {
+			width: 25%;	
+
+			@media (max-width: 500px){
+				width: 20%;
+			}
+		}
+		
+	}
+}
+footer {
+	text-align: center;
+	margin-top: 5%;
+	font-size: @text-size;
+	background: aliceblue;
+	height: 10%;
+	padding-top: 2.5%;
 }
